@@ -8,7 +8,7 @@ const{FoodPartnermodel} = require("../controller/auth.controller")
 const{Foodpartnerlogin} = require("../controller/auth.controller")
 
 
-router.post("/user/signup",UserRegistered);
+router.post("/user/register",UserRegistered);
 
 router.post("/user/login",Userloggedin);
 

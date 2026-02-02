@@ -38,6 +38,8 @@ email: user.email,
 fullName: user.fullname
   }
 })
+
+console.log(user)
 };
 
 async function Userloggedin(req,res) {
@@ -83,7 +85,7 @@ async function Userlogout(req,res) {
 };
 
 async function FoodPartnermodel(req,res) {
-  const {name,email,password} = req.body
+  const {name,email,password,address,phonenumber,contactname} = req.body
 fooduser = await foodmodel.findOne({email})
 if(fooduser){
   res.status(400).json({
@@ -95,6 +97,9 @@ const user = await foodmodel.create({
     name,
     email,
     password:hashedpassword,
+    address,
+    phonenumber,
+    contactname
 })
 const token = jwt.sign(
   {id: user._id
@@ -109,7 +114,10 @@ res.status(200).json({
   user: {
 id: user._id,
 email: user.email,
-name: user.name
+name: user.name,
+contact: user.contactname,
+address:user.address,
+phonenumber:user.phonenumber,
   }
 })
   

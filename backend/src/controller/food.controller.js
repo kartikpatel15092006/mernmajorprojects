@@ -32,7 +32,19 @@ const fooditemcreate = await fooditem.create({
 
 }
 
+async function getfooditems(req,res) {
+
+    const fooditems = await fooditem.find({
+
+
+    })
+    res.status(200).json({
+        message:"fooditems fetch success",
+        fooditems
+    })
+}
 
 module.exports = {
     createfood,
+    getfooditems,
 }
