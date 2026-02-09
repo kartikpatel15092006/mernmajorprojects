@@ -10,7 +10,7 @@ contactname:{
     required:true,
 },
 phonenumber:{
-    type:Number,
+    type:String,
     required:true,
 },
 address:{
